@@ -1,0 +1,13 @@
+<h1>Hello</h1>
+<h3>Addition of two numbers</h3>
+<h1>{{a}}</h1>
+<h1>{{b}}</h1>
+<br>
+<input type="number" #txt1>
+<input type="number" #txt2>
+<br>
+<button class="a" (click)="add(txt1.value,txt2.value)">+</button>
+<button  class="a"(click)="sub(txt1.value,txt2.value)">-</button>
+<button class="a" (click)="mul(txt1.value,txt2.value)">*</button>
+<button class="a" (click)="div(txt1.value,txt2.value)">/</button>
+<h1>Result is {{ans}}</h1>

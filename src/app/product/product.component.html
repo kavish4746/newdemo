@@ -1,0 +1,70 @@
+<div class="container">
+  <h1>Product Information</h1>
+</div>
+<div class="container">
+  <div class="form-group">ID
+  <input  type="text" class="form-control" [(ngModel)]="id">
+  </div>
+  <div class="form-group">Name
+  <input  type="text" class="form-control" [(ngModel)]="name" >
+</div> 
+<div class="form-group">Price
+  <input  type="number" class="form-control" [(ngModel)]="price">
+</div>
+<div class="form-group">Image:-
+  <img src={{img1}}>
+</div>
+<div class="form-group">Mfg.
+  <input  type="text" class="form-control" [(ngModel)]="mfg1">
+</div>
+
+<div class="form-group">Stock:-
+  <select  class="form-control" [(ngModel)]="soh1">
+    <option *ngFor="let item of drparr">{{item}}</option>
+  </select>
+</div>
+<div class="form-group">
+  <button (click)="onAdd()" class="form-control,btn btn-primary">ADD</button>
+</div>
+<hr>
+<div class="container"> 
+  <table class="table">
+  <thead>
+  <th>
+    ID
+  </th>
+  <th>
+    Name
+  </th>
+  <th>
+    Price
+  </th>
+  <th>
+    Image
+  </th>
+  <th>
+    Mfg.
+  </th>
+  <th>
+    Stock on Hand
+  </th>
+  <th>
+    Action
+  </th>
+</thead>
+<tr *ngFor="let item of productarr;let i=index">
+  <td>{{item.id}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.price}}</td>
+  <td><img src={{img1}} class="image"></td>
+  <td>{{item.mfg}}</td>
+  <td>{{item.stock}}
+      </td>
+  <td><button (click)="ondelete(i)" class="btn btn-default" aria-label="Left Align">
+      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+      <button [disabled]="flag" (click)="onuplus(item)" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true">Edit</span>
+      </button>
+</tr>
+</table>
+</div>
